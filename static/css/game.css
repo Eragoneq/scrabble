@@ -1,0 +1,23 @@
+body {
+    background-color: aqua;
+}
+
+#main_canvas {
+    border: 3px solid #000000;
+}
+
+#slowo {
+    font-size: 32px;
+}
+
+.container-canvas {
+    /* This could be done in one single declaration. See the extended sample. */
+    margin-right: auto;
+    margin-left: auto;
+    width: 750px;
+}
+
+.footer {
+    font-style: italic;
+}
+
