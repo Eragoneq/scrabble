@@ -25,7 +25,7 @@ SECRET_KEY = 'cy01#g#@m0t14)zilg!g^2=pc&0-b&#c911dx81%bkw6heh@92'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['9bb8bb76c524.eu.ngrok.io', '127.0.0.1']
+ALLOWED_HOSTS = ['bf4557cb37ec.eu.ngrok.io', '127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'channels',
     'game'
 ]
 
@@ -69,8 +70,16 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'scrabble.wsgi.application'
-
+#WSGI_APPLICATION = 'scrabble.wsgi.application'
+ASGI_APPLICATION = 'scrabble.routing.application'
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [('127.0.0.1', 6379)],
+        },
+    },
+}
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases

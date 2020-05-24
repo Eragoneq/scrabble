@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Scrabble.io - Lobby{% endblock %}
+{% block links %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/lobby.css' %}">
+    <script src="{% static 'js/socket.js' %}" type="text/javascript"></script>
+{% endblock %}
+
+
+{% block body %}
+<body>
+    <div class="container-fluid">
+        <div class="row p-2" style="background-color: darkcyan">
+            <strong style="padding-left: 2rem; font-size: 48px;">Scrabble.io</strong>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-3 m-4 p-3 border border-secondary rounded">
+                <span style="font-size: 36px">Lobby</span>
+                <hr>
+                <h4>Ilość czasu:</h4>
+                <select class="custom-select">
+                    <option selected>10 min</option>
+                    <option value="1">20 min</option>
+                    <option value="2">30 min</option>
+                    <option value="3">45 min</option>
+                </select>
+                <hr>
+                <h4>Wielkość mapy:</h4>
+                <select class="custom-select">
+                    <option selected>15x15</option>
+                    <option value="1">19x19</option>
+                    <option value="2">25x25</option>
+                    <option value="3">31x31</option>
+                </select>
+                <hr>
+                <a href="game" class="btn btn-primary" style="width: 100%">Start game</a>
+            </div>
+            <div class="col-3 m-4 p-3 border border-secondary rounded">
+                <span style="font-size: 36px">Players</span>
+                <hr>
+                <div class="container">
+                    <div class="row row-cols-2 justify-content-around" id="player-list">
+{#                        <div class="col-5 border border-dark rounded p-2 m-1 bg-light">Column</div>#}
+{#                        <div class="col-5 border border-dark rounded p-2 m-1 bg-light">Column</div>#}
+{#                        <div class="col-5 border border-dark rounded p-2 m-1 bg-light">Column</div>#}
+                    </div>
+                    <hr>
+                    <div class="row justify-content-between px-4">
+                        <input class="col-9" id="nick-input" type="text" placeholder="nickname">
+                        <input class="btn btn-primary" id="nick-submit" type="button" value="Enter">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+
+        </script>
+        <div class="row my-3 justify-content-center">
+            <div class="col-6 border border-secondary rounded">
+                Invite: ...
+            </div>
+        </div>
+    </div>
+<script src="{% static 'js/lobby.js' %}" type="text/javascript"></script>
+</body>
+{% endblock %}
